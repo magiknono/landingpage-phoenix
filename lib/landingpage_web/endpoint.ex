@@ -12,7 +12,7 @@ defmodule LandingpageWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :landingpage,
-    gzip: false,
+    gzip: true,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
