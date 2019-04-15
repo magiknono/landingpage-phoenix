@@ -1,28 +1,7 @@
-<h1>Show Lead</h1>
+<br />
 
-<ul>
+<p>Thank You <%= @lead.firstname %> <%= @lead.lastname %>!</p>
+<p>You are booked to the event.</p>
 
-  <li>
-    <strong>Firstname:</strong>
-    <%= @lead.firstname %>
-  </li>
 
-  <li>
-    <strong>Lastname:</strong>
-    <%= @lead.lastname %>
-  </li>
 
-  <li>
-    <strong>Phone:</strong>
-    <%= @lead.phone %>
-  </li>
-
-  <li>
-    <strong>Code:</strong>
-    <%= @lead.code %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: Routes.lead_path(@conn, :edit, @lead) %></span>
-<span><%= link "Back", to: Routes.lead_path(@conn, :index) %></span>

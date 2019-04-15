@@ -18,7 +18,7 @@ defmodule LandingpageWeb.LeadController do
     case Accounts.create_lead(lead_params) do
       {:ok, lead} ->
         conn
-        |> put_flash(:info, "Lead created successfully.")
+        |> put_flash(:info, "Awesome")
         |> redirect(to: Routes.lead_path(conn, :show, lead))
 
       {:error, %Ecto.Changeset{} = changeset} ->

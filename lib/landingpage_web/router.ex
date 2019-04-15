@@ -16,7 +16,9 @@ defmodule LandingpageWeb.Router do
   scope "/", LandingpageWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", LeadController, :new
+    get "/:id/thank-you", LeadController, :show
+    resources "/leads", LeadController , except: [:new, :show]
   end
 
   # Other scopes may use custom stacks.
