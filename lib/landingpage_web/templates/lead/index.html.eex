@@ -1,0 +1,32 @@
+<h1>Listing Leads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Phone</th>
+      <th>Code</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for lead <- @leads do %>
+    <tr>
+      <td><%= lead.firstname %></td>
+      <td><%= lead.lastname %></td>
+      <td><%= lead.phone %></td>
+      <td><%= lead.code %></td>
+
+      <td>
+        <%= link "Show", to: Routes.lead_path(@conn, :show, lead) %>
+        <%= link "Edit", to: Routes.lead_path(@conn, :edit, lead) %>
+        <%= link "Delete", to: Routes.lead_path(@conn, :delete, lead), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Lead", to: Routes.lead_path(@conn, :new) %></span>
